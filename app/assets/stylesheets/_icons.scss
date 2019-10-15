@@ -1,0 +1,17 @@
+.article__links i {
+  padding: 5px;
+  margin-right: 10px;
+  color: black;
+}
+
+.article__links__delete:hover {
+  color: gray;
+}
+
+.article__links__like:hover {
+  color: red;
+}
+
+.article__links i:hover {
+  transform: scale(1.2, 1.2);
+}

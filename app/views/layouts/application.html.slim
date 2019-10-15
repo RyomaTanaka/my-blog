@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    title
+      | MyBlog
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_pack_tag 'application'
+  body
+    header
+      .title my-blog
+      .navbar
+        ul.menu-list
+          li.menu-list_home
+            = link_to articles_path, turbolinks: false do
+              i.fa.fa-home
+          - if user_signed_in?
+            li.menu-list_user-name 
+              = link_to "#{current_user.name}", user_path(current_user)
+            li.menu-list_logout 
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete
+          - else
+            li.menu-list_login 
+              = link_to 'ログイン', new_user_session_path
+    .main-content
+      = yield
+    footer
+      -if user_signed_in?
+        .btn
+          a.js-modal-open.btn-social-circle.btn-social-circle--twitter href="#"
+            i.fa.fa-edit
+      .modal.js-modal
+        .modal__bg.js-modal-close
+        .modal__content
+          .form
+            = form_with model: @article, local: true do |f|
+              .msr_text_01
+                = f.label :title
+                = f.text_field :title, placeholder: 'title:'
+              .msr_textarea_05
+                = f.label :body, value: "text"
+                = f.text_area :body, placeholder: 'text:'
+              .msr_sendbtn_05
+                = f.submit class: "form-btn"
