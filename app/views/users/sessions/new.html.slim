@@ -1,9 +1,11 @@
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .msr_text_01
-    = f.label :email
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-    = f.label :password
-    = f.password_field :password, autocomplete: "current-password"
+    .form_content.email_form
+      = f.label :email
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    .form_content.password_form
+      = f.label :password
+      = f.password_field :password, autocomplete: "current-password"
   .msr_sendbtn_05
     = f.submit "Log in"
-    = link_to "Sign up", new_registration_path(resource_name)
+    / = link_to "Sign up", new_registration_path(resource_name)

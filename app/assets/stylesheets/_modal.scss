@@ -39,7 +39,7 @@
   font-size: 14px;
   padding-bottom: 5px;
 }
-.msr_text_01 input[type=text] {
+.msr_text_01 input {
   border: 1px solid #AAAAAA;
   box-sizing: border-box;
   box-shadow: 1px 1px 1px 1px #E1E1E1 inset;
@@ -48,7 +48,7 @@
   font-size: 13px;
   height: 25px;
   padding-left: 8px;
-  width: 460px;
+  width: 400px;
 }
 
 .msr_textarea_05 {
