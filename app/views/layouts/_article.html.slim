@@ -1,12 +1,12 @@
 .articles
-  - articles.each do |article|
+  - @articles.each do |article|
     .article
       p.article__title 
         = article.title
       p.article__body 
         = article.body
       .article__links
-        = link_to article_path(article) do
+        = link_to article_comments_path(article) do
           i.fa.fa-eye.article__links__show
         i.fa.fa-heart.article__links__like
         = link_to article_path(article), method: :delete do

@@ -1,0 +1,13 @@
+.btn2
+  a.js-modal-open.btn-social-circle.btn-social-circle--twitter href="#" data-target="modal02"
+    i.fa.fa-edit
+#modal02.modal.js-modal
+  .modal__bg.js-modal-close
+  .modal__content
+    .form
+      = form_with model: [@article, @comment], local: true do |f|
+        .msr_text_01
+          = f.label :message
+          = f.text_field :message, placeholder: 'message:'
+        .msr_sendbtn_05
+          = f.submit class: "form-btn"

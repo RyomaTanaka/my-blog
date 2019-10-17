@@ -1,0 +1,18 @@
+.articles
+  .article
+    p.article__title
+      = @article.title
+    p.article__body
+      = @article.body
+    .article__links
+      i.fa.fa-heart.article__links__like
+      = link_to article_path(@article), method: :delete do
+        i.fa.fa-trash.article__links__delete
+  .comments
+    p.comments_border Comments
+    - @comments.each do |c|
+      .comment
+        p.comment_message
+          = c.message
+= render 'layouts/btn'
+= render 'layouts/footer'

@@ -1,0 +1,21 @@
+footer
+  -if user_signed_in?
+    .btn
+      a.js-modal-open.btn-social-circle.btn-social-circle--twitter href="#" data-target="modal01"
+        -if @article.id.blank?
+          i.fa.fa-edit
+        -else
+          i.fa.fa-undo
+  #modal01.modal.js-modal
+    .modal__bg.js-modal-close
+    .modal__content
+      .form
+        = form_with model: @article, local: true do |f|
+          .msr_text_01
+            = f.label :title
+            = f.text_field :title, placeholder: 'title:'
+          .msr_textarea_05
+            = f.label :body, value: "text"
+            = f.text_area :body, placeholder: 'text:'
+          .msr_sendbtn_05
+            = f.submit class: "form-btn"
