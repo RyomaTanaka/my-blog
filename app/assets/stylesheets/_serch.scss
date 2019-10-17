@@ -1,0 +1,29 @@
+.serch {
+  width: 500px;
+  margin: 0 auto;
+}
+
+#serch-form {
+  margin-top: 80px;
+  width: 500px;
+  border-bottom: solid 1px black;
+}
+
+#serch-title {
+  margin-top: 50px;
+  border-bottom: solid 1px black;
+  margin-bottom: 30px;
+}
+
+.serch-title {
+  font-size: 20px;
+}
+
+.result {
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  border-bottom: solid 1px black;
+  a {
+    color: black;
+  }
+}
