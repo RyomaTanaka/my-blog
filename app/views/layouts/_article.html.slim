@@ -1,13 +1,18 @@
-.articles
-  - @articles.each do |article|
-    .article
-      p.article__title 
-        = article.title
-      p.article__body 
-        = article.body
-      .article__links
-        = link_to article_comments_path(article) do
-          i.fa.fa-eye.article__links__show
-        i.fa.fa-heart.article__links__like
-        = link_to article_path(article), method: :delete do
-          i.fa.fa-trash.article__links__delete
+.article
+  p.article__title 
+    = article.title
+  p.article__body 
+    = article.body
+  .article__links
+    = link_to article_comments_path(article) do
+      i.fa.fa-eye.article__links__show
+    -if user_signed_in?
+      -if Like.find_by(user_id: current_user.id, article_id: article.id)
+        = link_to "likes/#{article.id}/destroy", method: :post do
+          i.fa.fa-heart.article__links__like.un_like
+      -else
+        = link_to article_likes_path(article), method: :post do
+          i.fa.fa-heart.article__links__like.like
+      = article.likes.count
+    = link_to article_path(article), method: :delete do
+      i.fa.fa-trash.article__links__delete

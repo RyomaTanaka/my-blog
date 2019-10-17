@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
   def index
     @comment = Comment.new
     @comments = @article.comments
+    @like = Like.new
   end
 
   def create
