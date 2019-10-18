@@ -16,10 +16,14 @@ html
             = link_to articles_path, turbolinks: false do
               i.fa.fa-home
           - if user_signed_in?
+            li.menu-list_serch
+              = link_to "articles/serch" do
+                i.fa.fa-search
             li.menu-list_user-name 
               = link_to "#{current_user.name}", user_path(current_user)
             li.menu-list_logout 
-              = link_to 'ログアウト', destroy_user_session_path, method: :delete
+              = link_to destroy_user_session_path, method: :delete do
+                i.fa.fa-share
           - else
             li.menu-list_login 
               = link_to new_user_session_path do

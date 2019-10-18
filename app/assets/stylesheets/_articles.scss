@@ -48,6 +48,14 @@ header {
   font-size: 30px;
 }
 
+.menu-list_serch {
+  font-size: 25px;
+}
+
+.menu-list_logout {
+  font-size: 25px;
+}
+
 .fa-home:hover {
   color: #B8860B;
   transform: scale(1.2, 1.2);
@@ -60,6 +68,16 @@ header {
 
 .fa-user-plus:hover {
   color: #4682B4;
+  transform: scale(1.2, 1.2);
+}
+
+.fa-search:hover {
+  color: #4682B4;
+  transform: scale(1.2, 1.2);
+}
+
+.fa-share:hover {
+  color: greenyellow;
   transform: scale(1.2, 1.2);
 }
 
