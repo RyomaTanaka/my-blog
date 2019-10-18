@@ -39,9 +39,13 @@ $(function(){
 
     .done(function(articles) {
       articles_list.empty();
-      if (articles !== 0) {
+      if (articles.length !== 0) {
         articles.forEach(function(article) {
-          buildHTML(article)
+          if (input.length === 0) {
+            articles_list.empty();
+          } else {
+            buildHTML(article)
+          }
         });
       } else {
         alert('該当の投稿がありません');
